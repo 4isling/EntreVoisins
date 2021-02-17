@@ -1,5 +1,7 @@
 package com.openclassrooms.entrevoisins.ui.neighbour_list;
 
+import android.content.Intent;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,13 +15,17 @@ import com.bumptech.glide.request.RequestOptions;
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.events.DeleteNeighbourEvent;
 import com.openclassrooms.entrevoisins.model.Neighbour;
+import com.openclassrooms.entrevoisins.model.NeighbourProfil;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static android.support.v4.content.ContextCompat.startActivity;
 
 public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeighbourRecyclerViewAdapter.ViewHolder> {
 
@@ -51,6 +57,16 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
                 EventBus.getDefault().post(new DeleteNeighbourEvent(neighbour));
             }
         });
+
+        //listener onView to gotoProfile of selected user
+        holder.goToProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(holder.goToProfile.getContext(), NeighbourProfil.class);
+                intent.putExtra("neighbourProfile", neighbour);
+                holder.goToProfile.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -65,10 +81,14 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         public TextView mNeighbourName;
         @BindView(R.id.item_list_delete_button)
         public ImageButton mDeleteButton;
+        @BindView(R.id.neighbour_constraint_layout)
+        public ConstraintLayout goToProfile;
+
 
         public ViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);
         }
     }
+
 }

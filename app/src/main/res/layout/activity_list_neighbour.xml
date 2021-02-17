@@ -12,6 +12,7 @@
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="8dp"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
@@ -21,6 +22,7 @@
             android:layout_weight="1"
             android:background="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
             app:title="@string/app_name">
 
         </android.support.v7.widget.Toolbar>
@@ -32,13 +34,13 @@
             app:tabIndicatorHeight="3dp">
 
             <android.support.design.widget.TabItem
-                android:id="@+id/tabItem"
+                android:id="@+id/basicNeighbourTab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tab_neighbour_title" />
 
             <android.support.design.widget.TabItem
-                android:id="@+id/tabItem2"
+                android:id="@+id/favNeighbourTab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tab_favorites_title" />
@@ -54,7 +56,7 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/add_neighbour"
-        app:backgroundTint="@color/colorPrimary"
+        app:backgroundTint="@color/colorAccent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"

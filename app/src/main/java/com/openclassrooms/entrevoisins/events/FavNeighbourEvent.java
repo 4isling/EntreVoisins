@@ -2,23 +2,16 @@ package com.openclassrooms.entrevoisins.events;
 
 import com.openclassrooms.entrevoisins.di.DI;
 import com.openclassrooms.entrevoisins.model.Neighbour;
+import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 
-/**
- * Event fired when a user deletes a Neighbour
- */
-public class DeleteNeighbourEvent {
-
-    /**
-     * Neighbour to delete
-     */
+public class FavNeighbourEvent {
     public Neighbour neighbour;
-
     /**
      * Constructor.
      * @param neighbour
      */
-    public DeleteNeighbourEvent(Neighbour neighbour) {
+    public FavNeighbourEvent(Neighbour neighbour) {
         this.neighbour = neighbour;
-        DI.getNeighbourApiService().deleteNeighbour(neighbour);
+        DI.getNeighbourApiService().favNeighbour(neighbour);
     }
 }

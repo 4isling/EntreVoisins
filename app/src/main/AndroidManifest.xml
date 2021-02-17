@@ -13,6 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".model.NeighbourProfil"
+            android:label="@string/title_activity_neighbour_profil"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity
             android:name=".ui.neighbour_list.AddNeighbourActivity"
             android:label="@string/activity_new_neighbour" />
         <activity
