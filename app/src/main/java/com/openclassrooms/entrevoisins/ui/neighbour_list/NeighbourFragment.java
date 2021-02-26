@@ -16,6 +16,7 @@ public class NeighbourFragment extends BaseFragment {
     protected void initList() {
         mNeighbours = mApiService.getNeighbours();
         mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours));
+
+        //notify data set change
     }
 }
-//notify data set change

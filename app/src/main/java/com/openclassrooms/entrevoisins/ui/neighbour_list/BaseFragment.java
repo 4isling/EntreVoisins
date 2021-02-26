@@ -91,6 +91,7 @@ public abstract class BaseFragment extends Fragment {
     }
     @Subscribe
     public void onFavNeighbour(FavNeighbourEvent event) {
+        mRecyclerView.getAdapter().notifyDataSetChanged();
         initList();
     }
 }
