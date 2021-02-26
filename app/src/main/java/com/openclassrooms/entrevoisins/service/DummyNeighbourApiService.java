@@ -1,7 +1,6 @@
 package com.openclassrooms.entrevoisins.service;
 
 import com.openclassrooms.entrevoisins.model.Neighbour;
-import com.openclassrooms.entrevoisins.model.NeighbourProfil;
 
 import java.util.ArrayList;
 import java.util.List;

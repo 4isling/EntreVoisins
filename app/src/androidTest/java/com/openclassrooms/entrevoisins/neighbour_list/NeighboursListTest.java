@@ -41,8 +41,9 @@ public class NeighboursListTest {
 
     // This is fixed
     private static int ITEMS_COUNT = 12;
-
+    private int
     private ListNeighbourActivity mActivity;
+
 
     @Rule
     public ActivityTestRule<ListNeighbourActivity> mActivityRule =
@@ -99,6 +100,16 @@ public class NeighboursListTest {
     public void profileActivity_load_the_selected_Neighbour(){
         onView(allOf(withId(R.id.list_neighbours),isDisplayed())).perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
         onView(allOf(withId(R.id.profileName),isDisplayed())).check(matches(withText("Caroline")));
+    }
+
+    /**
+     * when user click on favlist neighours the list of neighbour should return the fav neighbour list
+     */
+    @Test
+    public void myFavNeighbourList_displayOnly_FavNeighbour(){
+        onView(withId(R.id.main_content));
+        onView(withId(R.id.favNeighbourTab)).perform(click());
+        onView(allOf(withId(R.id.list_neighbours),isDisplayed())).check(withItemCount())
     }
 
 }

@@ -1,4 +1,4 @@
-package com.openclassrooms.entrevoisins.model;
+package com.openclassrooms.entrevoisins.ui.neighbour_profile;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.events.FavNeighbourEvent;
+import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 
 import org.greenrobot.eventbus.EventBus;
@@ -28,7 +29,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import butterknife.BindView;
-import butterknife.BindViews;
+
 import butterknife.ButterKnife;
 
 

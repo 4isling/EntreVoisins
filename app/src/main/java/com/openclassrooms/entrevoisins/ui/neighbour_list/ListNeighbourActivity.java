@@ -8,11 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.openclassrooms.entrevoisins.R;
-import com.openclassrooms.entrevoisins.events.FavNeighbourEvent;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
-
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
+import com.openclassrooms.entrevoisins.ui.add_neighbour_activity.AddNeighbourActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
