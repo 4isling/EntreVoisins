@@ -28,6 +28,13 @@ public class NeighbourServiceTest {
         service = DI.getNewInstanceApiService();
     }
 
+
+    @Test
+    public void getFavoriteNeighbourWithSuccess() {
+        List<Neighbour> neighbours = service.getFavNeighbour();
+        List<Neighbour> expectedFavNeighbours = DummyFavNeighbourGenerator.DUMMY_FAV_NEIGHBOURS;
+        assertThat(neighbours, IsIterableContainingInAnyOrder.containsInAnyOrder(expectedFavNeighbours.toArray()));
+    }
     @Test
     public void getNeighboursWithSuccess() {
         List<Neighbour> neighbours = service.getNeighbours();
@@ -56,14 +63,6 @@ public class NeighbourServiceTest {
         if(neighbourToUnFav.isFav())
         service.favNeighbour(neighbourToUnFav);
         assertFalse(service.getFavNeighbour().contains(neighbourToUnFav));
-    }
-
-
-    @Test
-    public void getFavoriteNeighbourWithSuccess() {
-        List<Neighbour> neighbours = service.getFavNeighbour();
-        List<Neighbour> expectedFavNeighbours = DummyFavNeighbourGenerator.DUMMY_FAV_NEIGHBOURS;
-        assertThat(neighbours, IsIterableContainingInAnyOrder.containsInAnyOrder(expectedFavNeighbours.toArray()));
     }
 
 }
