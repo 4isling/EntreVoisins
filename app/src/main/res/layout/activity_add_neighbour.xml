@@ -12,7 +12,7 @@
         android:orientation="vertical"
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
-        azpp:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
